@@ -16,16 +16,3 @@
 - 📱 Fully Responsive Mobile Design
 
 ---
-
-## 🧑‍💻 Tech Stack
-
-- **Frontend:** HTML5, CSS3, JavaScript
-- **Framework (Optional):** Tailwind / Bootstrap
-- **Form Handling:** Google Forms / FormSubmit (for static site)
-- **Deployment:** GitHub Pages / Vercel
-
----
-
-## 📌 Note
-
-Created by **Elite Coders** as a showcase project. Ideal for gym owners, yoga studios, or personal trainers to create a modern online presence.
