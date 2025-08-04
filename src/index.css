@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import font */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Base Design System - CSS Variables */
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 16 100% 55%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 16 100% 55%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 16 100% 55%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 16 100% 55%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 6%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 16 100% 55%;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 16 100% 55%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 16 100% 55%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 16 100% 55%;
+
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 16 100% 55%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 6%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 16 100% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Custom Component Classes */
+@layer components {
+  /* Scrolling Animations */
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .animate-scroll-reverse {
+    animation: scroll-reverse 30s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes scroll-reverse {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Fade & Slide Animations */
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(16 100% 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hover Effects */
+  .hover-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+  }
+
+  /* Responsive Font Sizes */
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
+  .text-responsive-xl {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  .text-responsive-2xl {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+  }
+}
+
+/* ✅ Removed invalid @media + @apply overrides */
+
+/* For responsiveness, just use responsive utility classes directly in JSX:
+    className="text-5xl md:text-4xl"
+*/
